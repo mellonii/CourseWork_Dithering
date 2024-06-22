@@ -3,9 +3,9 @@ project(Dithering_Ishkuvatova)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(OpenCV_DIR "C:/opencv/build/x64/vc16")
-find_package(OpenCV REQUIRED)
-include_directories(${OpenCV_INCLUDE_DIRS})
+find_package(OpenCV CONFIG REQUIRED)
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+link_directories( ${OpenCV_LIB_DIR} )
 
 add_executable(Dithering_Ishkuvatova dithering.cpp)
 target_link_libraries(Dithering_Ishkuvatova ${OpenCV_LIBS})
